@@ -1,0 +1,7 @@
+.plant {
+    fill: transparent;
+}
+.plant:hover {
+    fill: #388e3c;
+    transition: 0.3s ease-in-out;
+}

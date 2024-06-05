@@ -1,0 +1,7 @@
+.fence{
+    fill: transparent;
+}
+.fence:hover{
+    fill: wheat;
+    transition: 0.3s ease-in-out;
+}

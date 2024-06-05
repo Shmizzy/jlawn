@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.hero{
+    height: 600px;
+    width: 100vw;
+    background-color: #C8E6C9;
+    display: flex;
+}
+.hero-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.hero-content h1{
+    font-size: 54px;
+    text-align: left;
+    margin: 0;
+    width: 435px;
+    box-sizing: content-box;
+}
+.words{
+    color: #388E3C;
+    margin: 0;
+    overflow: hidden;
+    height: 70px;
+}
+.transform{
+    height: 100%;
+    display: block;
+    animation: spin_words 8s infinite;
+}
+
+@keyframes spin_words {
+    10%{
+        transform: translateY(-112%);
+    }
+    25%{
+        transform: translateY(-100%);
+    }
+    35%{
+        transform: translateY(-212%);
+    }
+    50%{
+        transform: translateY(-200%);
+    }
+    60%{
+        transform: translateY(-312%);
+    }
+    75%{
+        transform: translateY(-300%);
+    }
+    85%{
+        transform: translateY(-412%);
+    }
+    100%{
+        transform: translateY(-400%);
+    }
+}
+
+.hero-content p{
+    font-size: 18px;
+    text-align: left;
+    width: 435px;
+    margin: 0;
+    font-family: 'Work Sans', serif;
+}
+.button-container{
+    width: 435px;
+}
+.hero-content button {
+    padding: 1em 1.3em;
+    width: 250px;
+    background-color: #ffb327;
+    border-radius: 8px;
+    border: none;
+    color: #FFFFFF;
+    font-family: 'Work Sans', serif;
+    font-weight: bold;
+}
+.hero-content button:hover{
+    color: #000000;
+    cursor: pointer;
+}
+.hero-images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-gallery {
+    margin-right: 40px;
+    display: flex;
+    width: 75%;
+    height: 75%;
+    gap: 0; /* Remove gap */
+    position: relative;
+}
+
+.gallery-card {
+    width: 30%;
+    height: 100%;
+    flex: 1;
+    background-color: #000000;
+    border-radius: 14px;
+    border: 5px solid #FFFFFF;
+    margin-left: -10%; /* Overlap cards by applying negative margin */
+    transition: transform 0.3s ease; /* Optional: Add a transition effect */
+    object-fit: cover; /* Ensure images cover the card without stretching */
+    object-position: center; /* Center the image within the card */
+}
+
+.gallery-card:first-child {
+    margin-left: 0; /* Reset margin for the first card */
+}
+
+.gallery-card:nth-child(1) {
+    z-index: 1; /* Ensure the first card is below the second */
+    transform: rotate(-10deg) translateX(-1%); /* Rotate and move left */
+}
+
+.gallery-card:nth-child(2) {
+    z-index: 2; /* Ensure the second card is on top */
+    transform: rotate(0deg) translatey(-5%); /* Keep it centered */
+}
+
+.gallery-card:nth-child(3) {
+    z-index: 1; /* Ensure the third card is below the second */
+    transform: rotate(10deg) translateX(1%); /* Rotate and move right */
+}
+
+.hero-gallery:hover .gallery-card {
+    transform: scale(1.05); /* Optional: Scale up on hover */
+}
+
+.hero-gallery:hover .gallery-card:nth-child(1) {
+    transform: rotate(-10deg) translateX(-10%) scale(1.05); /* Adjust overlap on hover */
+}
+
+.hero-gallery:hover .gallery-card:nth-child(2) {
+    transform: scale(1.05); /* Adjust overlap on hover */
+}
+
+.hero-gallery:hover .gallery-card:nth-child(3) {
+    transform: rotate(10deg) translateX(10%) scale(1.05); /* Adjust overlap on hover */
+}
