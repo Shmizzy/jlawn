@@ -2,10 +2,12 @@ import './hero.css';
 import image1 from '../../assets/hero-img.jpg';
 import image2 from '../../assets/hero-img2.jpg';
 import image3 from '../../assets/hero-img3.jpg';
+import { Link } from 'react-scroll';
+
 
 const Hero = () => {
     return (
-        <div className="hero">
+        <div className="hero" id='hero'>
             <section className='hero-content'>
                 <h1>
                     <div className='words'>
@@ -16,8 +18,8 @@ const Hero = () => {
                         <span className='transform'>Change</span>
                     </div>
                     Your Lawn With <br /> Expert Care</h1>
-                <p>Professional Lawn Services for a Greener, Healthier Yard. Available In Corpus Christi, Texas and Surrounding Cities!</p>
-                <div className='button-container'><button>Recive Your Free Quote Now</button></div>
+                <p>Professional Lawn Services for a Greener, Healthier Yard. We service all lawns big or small. Available In Corpus Christi and Surrounding Cities!</p>
+                <div className='button-container'><button><Link Link to='contact' spy={true} smooth={true} offset={200} duration={100}>Availability</Link></button></div>
             </section>
             <section className='hero-images'>
                 <div className='hero-gallery'>

@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.contact {
+    font-family: 'Work Sans', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.contact-info,.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 0;
+    width: 100%;
+    /* Ensure they can shrink to fit the content */
+}
+.success-card{
+    flex: 1;
+    margin: 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
+    height: min-content;
+}
+
+.contact-info {
+    background-color: #C8E6C9;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Ensure content is distributed evenly */
+    height: 100%;
+    min-height: 500px;
+}
+.contact-info > *,
+.contact-form > * {
+    flex-grow: 1;
+    /* Other styles */
+}
+
+.contact-info h1 {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    font-family: 'Merriweather', serif;
+    font-weight: bolder;
+}
+
+.contact-info h1,
+.contact-info h5,
+.contact-info h6 {
+    font-weight: bold;
+    /* Make contact info text bolder */
+}
+
+.contact-form {
+    flex: 1;
+    background-color: #388E3C;
+    /* Ensure background color consistency */
+    padding: 20px;
+    
+    min-height: 500px;
+}
+
+.contact-top,
+.contact-bottom {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+    gap: 5px;
+    max-width: 250px;
+}
+
+.contact-top h5,
+.contact-top h6,
+.contact-bottom h6 {
+    margin: 0;
+}
+
+.contact-map-card {
+    border: 1px solid black;
+    background-color: black;
+    margin-bottom: 20px;
+    /* Adjust as needed */
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.contact-map-card img {
+    width: 100%;
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Remove any extra space below the image */
+}
+
+.form-card {
+    flex-grow: 1;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.request-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.request-form .form-section {
+    margin-bottom: 15px;
+}
+
+.request-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.request-form input,
+.request-form textarea {
+    width: calc(100% - 2em);
+    /* Adjust the width to prevent overflow */
+    box-sizing: border-box;
+    max-width: 100%;
+    line-height: 1.5;
+    padding: 10px;
+    font-size: .8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.request-form input:focus,
+.request-form textarea:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+}
+
+.request-form button {
+    padding: 15px;
+    font-size: 1rem;
+    background-color: #ffc107;
+    /* A more vibrant green color */
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.request-form button:hover {
+    background-color: #e0a800;
+    /* A darker shade of green for hover state */
+}
+
+.success-message {
+    background-color: #dff0d8; /* Light green background for success */
+    color: #3c763d; /* Dark green text for better readability */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #d6e9c6;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-message:before {
+    content: '✔'; /* Checkmark icon */
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+
+.success-message h2 {
+    color: #007BFF;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    font-size: 1.2rem;
+}
+
+.request-form input:hover,
+.request-form textarea:hover,
+.request-form button:hover {
+    border-color: #007bff;
+    /* Change border color on hover */
+}
+
+.request-form input::placeholder,
+.request-form textarea::placeholder {
+    color: #6c757d;
+    /* A darker grey for placeholder text */
+    opacity: 1;
+    /* Full opacity for maximum visibility */
+}
+@media (max-width: 768px) {
+    .contact-info, .contact-form {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    .contact{
+        flex-direction: column;
+    }
+}

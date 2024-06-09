@@ -1,37 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1d1208;
+    color: #f9f0ea;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    padding: 1rem;
+    transition: height 0.3s ease;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.nav-menu {
+    flex: 2;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    overflow: hidden;
 }
 
 .logo {
     flex: 1;
     display: flex;
-    margin: 0;
     justify-content: center;
+}
+
+.logo h1 {
+    color: #e2b893;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.navbar.active .nav-menu {
+    max-height: 500px;
+    opacity: 1;
 }
 
 .navigation {
     flex: 1;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 20px;
-    font-weight: 600;
-    color: #000000;
+    justify-content: space-evenly;
+    order: 1;
 }
 
-.navigation li:hover {
+.navigation h4:hover {
     transform: translateY(-2px);
-    color: #FFFFFF;
+    transition: 0.3s ease;
+    color: #4fcf6a;
     cursor: pointer;
+}
 
+.navigation h4 {
+    color: #f9f0ea;
+    transition: color 0.3s ease;
+}
+
+.phone {
+    color: #f9f0ea;
+    transition: color 0.3s ease;
+}
+
+.phone:hover {
+    color: #e2b893;
 }
 
 .nav-button {
@@ -39,32 +81,99 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 25px;
+    order: 2;
 }
 
 .button-wrapper {
     padding: 1.3px 1.7px;
     border-radius: 8px;
-    background-image: linear-gradient(to bottom right, #ffb327, #2196F3);
 }
 
 .button-wrapper button {
-    padding: 1em 2em;
-    height: 100%;
-    width: 100%;
-    background-color: #000000;
-    border-radius: 8px;
+    background-color: #e2b893;
+    color: #1d1208;
     border: none;
-    color: #FFFFFF;
-    font-family: 'Merriweather', serif;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.button-wrapper:hover {
+.button-wrapper button:hover {
     transform: translateY(-3px);
     transition: 0.3s;
     cursor: pointer;
+    background-color: #f9f0ea;
+    color: #1d1208;
+    transform: scale(1.05);
 }
 
 span:hover {
     transform: translateY(-4px);
     transition: 0.3s;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 0.5rem;
+    }
+
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hamburger-menu {
+        flex: 1;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        font-size: 2.4rem;
+        cursor: pointer;
+        
+    }
+
+    .nav-menu {
+        flex: 0;
+        display: flex;
+        flex-direction: column;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-menu.active {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        max-height: 500px;
+    }
+
+    .hamburger-menu.active {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        order: 2;
+    }
+    .nav-button{
+        order: 1;
+    }
+
+    .logo {
+        flex: 2;
+    }
+
 }

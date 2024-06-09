@@ -5,3 +5,9 @@ body{
     margin: 0;
     background-color: #388E3C;
 }
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+html {
+    scroll-behavior: smooth;
+  }
