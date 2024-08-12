@@ -27,7 +27,7 @@ const Navbar = () => {
                     <div className='button-wrapper'>
                         <button><Link to='contact' onClick={toggleMenu} spy={true} smooth={true} offset={-140} duration={100}>Schedule us</Link></button>
                     </div>
-                    <h4 className='phone'>📞 956-867-3570</h4>
+                    <a href="tel:956-867-3570"><h4 className='phone'>📞 956-867-3570</h4></a>
                 </div>
             </div>
             

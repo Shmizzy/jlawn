@@ -1,13 +1,27 @@
 import './contact.css'
 import { APIProvider, Map } from '@vis.gl/react-google-maps';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import map from '../../assets/map.png'
+import emailjs from '@emailjs/browser';
 
 
 const Contact = () => {
+    const form = useRef();
     const [formSubmitted, setFormSubmitted] = useState(false);
     const handleSubmit = (event) => {
         event.preventDefault();
+        emailjs
+            .sendForm(import.meta.env.VITE_SERVICE_KEY, import.meta.env.VITE_TEMPLATE_KEY, form.current, {
+                publicKey: import.meta.env.VITE_PUBLIC_KEY,
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
         setFormSubmitted(true);
     }
     return (
@@ -36,18 +50,18 @@ const Contact = () => {
             ) : (
                 <section className='contact-form'>
                     <div className="form-card">
-                        <form className="request-form" onSubmit={handleSubmit}>
+                        <form ref={form} className="request-form" onSubmit={handleSubmit}>
                             <div className="form-section">
-                                <label htmlFor="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+                                <label htmlFor="user_name">Name</label>
+                                <input type="text" id="user_name" name="user_name" placeholder="Enter your full name" required />
                             </div>
                             <div className="form-section">
-                                <label htmlFor="address">Address</label>
-                                <input type="address" id="address" name="address" placeholder="123 Ice Cream St" />
+                                <label htmlFor="customer_address">Address</label>
+                                <input type="text" id="customer_address" name="customer_address" placeholder="123 Ice Cream St" />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="phone">Phone #</label>
-                                <input type="tel" id="phone" name="phone" placeholder="(555) 555-1234" required />
+                                <input type="tel" id="phone" name="contact_number" placeholder="(555) 555-1234" required />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="message">Message</label>
